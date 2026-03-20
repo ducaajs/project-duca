@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Duca — AJ Sottile</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --navy: #0b1120;
+  --navy2: #111827;
+  --navy3: #1e293b;
+  --gold: #c9a84c;
+  --gold2: #e8c97a;
+  --white: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #e2462a;
+  --border: rgba(201,168,76,0.2);
+  --border2: rgba(255,255,255,0.07);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.page {
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 0.6in 0.7in;
+}
+
+/* ── HEADER ── */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 30px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.7in;
+  right: -0.7in;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2), transparent);
+}
+
+.name-block .eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 7pt;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.name-block h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42pt;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 0.95;
+  color: var(--white);
+}
+
+.name-block h1 strong {
+  font-weight: 700;
+  color: var(--gold2);
+}
+
+.name-block .tagline {
+  margin-top: 10px;
+  font-size: 9pt;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
+
+.header-right {
+  text-align: right;
+  padding-top: 6px;
+}
+
+.project-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'DM Mono', monospace;
+  font-size: 7pt;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+}
+
+.header-meta {
+  font-size: 8pt;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.header-meta span {
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.section-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 7pt;
+  color: var(--gold);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16pt;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── INTRO BLOCK ── */
+.intro-block {
+  background: var(--navy3);
+  border-left: 3px solid var(--gold);
+  padding: 16px 20px;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  color: #cbd5e1;
+}
+
+.intro-block p + p { margin-top: 10px; }
+
+/* ── FOUR CARDS ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.card {
+  background: var(--navy2);
+  border: 1px solid var(--border2);
+  border-top: 2px solid var(--gold);
+  padding: 14px 16px;
+}
+
+.card-eye {
+  font-family: 'DM Mono', monospace;
+  font-size: 6.5pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.card-body {
+  font-size: 8.5pt;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── AGENT TABLE ── */
+.agent-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+}
+
+.agent-table thead tr {
+  background: var(--navy3);
+  border-bottom: 1px solid var(--gold);
+}
+
+.agent-table thead th {
+  padding: 8px 12px;
+  text-align: left;
+  font-family: 'DM Mono', monospace;
+  font-size: 6.5pt;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.agent-table tbody tr {
+  border-bottom: 1px solid var(--border2);
+}
+
+.agent-table tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.02);
+}
+
+.agent-table tbody td {
+  padding: 9px 12px;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.agent-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--gold2);
+  white-space: nowrap;
+  font-size: 9pt;
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 6pt;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  margin-right: 4px;
+}
+
+/* ── TECH GRID ── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.tech-item {
+  background: var(--navy2);
+  border: 1px solid var(--border2);
+  padding: 10px 12px;
+}
+
+.tech-cat {
+  font-family: 'DM Mono', monospace;
+  font-size: 6pt;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+
+.tech-name {
+  font-size: 8.5pt;
+  font-weight: 500;
+  color: var(--white);
+}
+
+/* ── DIAGNOSTIC BOX ── */
+.diagnostic {
+  background: var(--navy2);
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  position: relative;
+}
+
+.diagnostic-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 6.5pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.diagnostic p {
+  font-size: 9pt;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.diagnostic p:last-child { margin-bottom: 0; }
+
+code {
+  font-family: 'DM Mono', monospace;
+  font-size: 8pt;
+  background: rgba(255,255,255,0.07);
+  padding: 1px 5px;
+  color: var(--gold2);
+}
+
+/* ── ACCOMPLISHMENTS ── */
+.subsection-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 7pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 18px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border2);
+}
+
+.acc-list {
+  list-style: none;
+}
+
+.acc-list li {
+  padding: 6px 0 6px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 9pt;
+  color: #cbd5e1;
+  position: relative;
+  line-height: 1.6;
+}
+
+.acc-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 8pt;
+  top: 7px;
+}
+
+.acc-list li:last-child { border-bottom: none; }
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.skill-group { }
+
+.skill-group-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 6.5pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-list li {
+  font-size: 8.5pt;
+  color: #94a3b8;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.skill-list li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  padding-left: 22px;
+  border-left: 1px solid var(--border);
+}
+
+.tl-item {
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.tl-eye {
+  font-family: 'DM Mono', monospace;
+  font-size: 6.5pt;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.tl-title {
+  font-weight: 600;
+  font-size: 9.5pt;
+  color: var(--white);
+  margin-bottom: 3px;
+}
+
+.tl-body {
+  font-size: 8.5pt;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── STATUS BADGES ── */
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--navy2);
+  border: 1px solid var(--border2);
+  padding: 5px 10px;
+  font-size: 7.5pt;
+  color: var(--muted);
+}
+
+.status-pill .dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 32px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  font-size: 7.5pt;
+  color: var(--muted);
+}
+
+footer strong { color: var(--white); font-weight: 500; }
+
+.footer-right {
+  text-align: right;
+  font-family: 'DM Mono', monospace;
+  font-size: 7pt;
+  letter-spacing: 0.5px;
+}
+
+/* ── PRINT ── */
+@media print {
+  body { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { padding: 0.5in 0.6in; }
+  .section { page-break-inside: avoid; }
+  .cards-grid, .tech-grid, .agent-table { page-break-inside: avoid; }
+}
+
+@page { size: letter; margin: 0.5in 0.6in; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name-block">
+      <div class="eyebrow">AI Systems Portfolio · March 2026</div>
+      <h1>AJ <strong>Sottile</strong></h1>
+      <div class="tagline">Autonomous Agent Architecture &amp; AI Systems Design</div>
+    </div>
+    <div class="header-right">
+      <div class="project-badge">Project Duca</div>
+      <div class="header-meta">
+        <span>DucaBrain</span> · Ubuntu 24.04<br>
+        OpenClaw 2026.3.13 · Ollama<br>
+        Johnstown, PA · March 2026
+      </div>
+    </div>
+  </div>
+
+  <!-- 01 OVERVIEW -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Project Overview</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="intro-block">
+      <p>Project Duca is a fully autonomous, locally-hosted AI executive job search pipeline designed, built, debugged, and operationalized by AJ Sottile. Running on a purpose-built Ubuntu 24.04 workstation, the system deploys a six-agent AI pipeline powered by locally-running large language models via Ollama — with zero cloud dependency and zero paid API usage.</p>
+      <p>The system autonomously scouts job leads, vets companies, analyzes fit, writes tailored application materials, audits quality, and delivers a structured Morning Report every day at 8:00 AM ET. All outputs are filed to Google Drive. Duca communicates exclusively via Discord.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-eye">Mission Target</div>
+        <div class="card-title">Enterprise Enablement &amp; Systems Architecture</div>
+        <div class="card-body">Targeting strategic leadership roles at the intersection of organizational development and AI integration. Remote or Hybrid operational models with ≤25% travel.</div>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card-eye">Deployment Model</div>
+        <div class="card-title">100% Local · Zero Cloud</div>
+        <div class="card-body">All models run locally on DucaBrain. No paid APIs. No cloud inference. Data never leaves the machine except scheduled Google Drive outputs shared with the operator.</div>
+      </div>
+      <div class="card">
+        <div class="card-eye">Communication</div>
+        <div class="card-title">Discord Bot Channel</div>
+        <div class="card-body">Duca operates as a Discord bot in a private guild. All operator communication, approvals, and reporting flow through a dedicated #general channel.</div>
+      </div>
+      <div class="card">
+        <div class="card-eye">Scheduling</div>
+        <div class="card-title">Daily at 8:00 AM ET</div>
+        <div class="card-body">Morning Report fires automatically via OpenClaw's built-in Gateway scheduler. No external cron daemon required. Fully self-managing and persistent across reboots.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 PIPELINE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Six-Agent Pipeline</span>
+      <div class="section-line"></div>
+    </div>
+    <table class="agent-table">
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th>Role</th>
+          <th>Model</th>
+          <th>Responsibilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🧠 Duca</td>
+          <td><span class="badge">Main</span>Manager &amp; Voice</td>
+          <td>Duca:latest</td>
+          <td>Operator interface, pipeline orchestration, Morning Report delivery, Discord</td>
+        </tr>
+        <tr>
+          <td>Agent 1 · Scout</td>
+          <td><span class="badge">Sub</span>Coordinator</td>
+          <td>qwen3.5:4b</td>
+          <td>Job lead discovery across free sources, salary verification, Source of Truth URL confirmation</td>
+        </tr>
+        <tr>
+          <td>Agent 2 · Gatekeeper</td>
+          <td><span class="badge">Sub</span>Researcher</td>
+          <td>qwen3.5:4b</td>
+          <td>URL verification, ghost job detection, fraud screening, Blacklist Log maintenance</td>
+        </tr>
+        <tr>
+          <td>Agent 3 · Analyst</td>
+          <td><span class="badge">Sub</span>Analyst</td>
+          <td>qwen3.5:9b</td>
+          <td>Semantic JD analysis, pain point extraction, Match Score calculation (≥95% threshold)</td>
+        </tr>
+        <tr>
+          <td>Agent 4 · Copywriter</td>
+          <td><span class="badge">Sub</span>Writer</td>
+          <td>qwen3.5:9b</td>
+          <td>Tailored cover letters (≤350 words), resume variant production, application packet assembly</td>
+        </tr>
+        <tr>
+          <td>Agent 5 · Inspector</td>
+          <td><span class="badge">Sub</span>Auditor</td>
+          <td>qwen3.5:4b</td>
+          <td>Full QA audit, hallucination check, Drive packet creation, SQLite Vault logging</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 03 TECH STACK -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Technology Stack</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item"><div class="tech-cat">Agent Framework</div><div class="tech-name">OpenClaw 2026.3.13</div></div>
+      <div class="tech-item"><div class="tech-cat">Local Inference</div><div class="tech-name">Ollama</div></div>
+      <div class="tech-item"><div class="tech-cat">Primary Model</div><div class="tech-name">Duca:latest (custom)</div></div>
+      <div class="tech-item"><div class="tech-cat">Analyst / Writer</div><div class="tech-name">qwen3.5:9b</div></div>
+      <div class="tech-item"><div class="tech-cat">Sub-Agents</div><div class="tech-name">qwen3.5:4b</div></div>
+      <div class="tech-item"><div class="tech-cat">Embeddings</div><div class="tech-name">nomic-embed-text</div></div>
+      <div class="tech-item"><div class="tech-cat">Communication</div><div class="tech-name">Discord Bot API</div></div>
+      <div class="tech-item"><div class="tech-cat">Output Storage</div><div class="tech-name">Google Drive (gog CLI)</div></div>
+      <div class="tech-item"><div class="tech-cat">Host OS</div><div class="tech-name">Ubuntu 24.04</div></div>
+      <div class="tech-item"><div class="tech-cat">Service Manager</div><div class="tech-name">systemd</div></div>
+      <div class="tech-item"><div class="tech-cat">Scheduler</div><div class="tech-name">OpenClaw Cron Gateway</div></div>
+      <div class="tech-item"><div class="tech-cat">Google Auth</div><div class="tech-name">OAuth 2.0 / gogcli v0.12</div></div>
+    </div>
+  </div>
+
+  <!-- 04 DEBUGGING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Critical Debugging Achievement</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="diagnostic">
+      <div class="diagnostic-label">Root Cause Analysis — Silent System Failure</div>
+      <p><strong style="color:var(--white)">The Problem:</strong> When <code>api: "ollama"</code> is set in OpenClaw configuration, the framework sends the system prompt using <code>role: "developer"</code>. Ollama silently drops any message with an unrecognized role — no error, no warning, no log entry. Duca's 24,000-character system prompt vanished on every single request. Tool calls worked because they use <code>role: "tool"</code> — which is why file reads succeeded but full agent reasoning never followed.</p>
+      <p><strong style="color:var(--white)">The Fix:</strong> Switching to <code>api: "openai-completions"</code> with <code>baseUrl: "http://127.0.0.1:11434/v1"</code> and adding an explicit <code>compat</code> block — <code>supportsDeveloperRole: false, supportsReasoningEffort: false</code> — to the Duca model entry in both config files. This routes through OpenClaw's compatibility layer which correctly sends the system prompt as <code>role: "system"</code>.</p>
+      <p><strong style="color:var(--white)">Verification:</strong> Discord test "Duca, who are you?" returned full identity, mission awareness, 5-agent pipeline knowledge, Drive output structure, blacklist protocol, and approval requirements — complete system prompt reception confirmed on first attempt after fix.</p>
+    </div>
+  </div>
+
+  <!-- 05 ACCOMPLISHMENTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Key Accomplishments</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="subsection-title">AI-Assisted Development Approach</div>
+    <ul class="acc-list">
+      <li>Leveraged Google Gemini as the primary AI collaborator throughout initial system design, agent architecture planning, workspace file authoring, and early build phases</li>
+      <li>Engaged Anthropic Claude for advanced diagnostic work, root cause analysis, configuration surgery, Google Workspace OAuth integration, and final operational hardening</li>
+      <li>Demonstrated practical multi-model AI workflow — selecting the right AI tool for each phase of a complex technical project and directing both effectively toward a working production system</li>
+    </ul>
+
+    <div class="subsection-title">System Design &amp; Architecture</div>
+    <ul class="acc-list">
+      <li>Designed and deployed a purpose-built AI workstation (DucaBrain) running Ubuntu 24.04, configured exclusively for autonomous agentic AI workloads</li>
+      <li>Architected a six-agent pipeline with role-separated responsibilities, model tier assignments, tool access policies, and isolated workspace and session stores per agent</li>
+      <li>Implemented a custom Duca model (Duca:latest) built on qwen3.5:9b with a 32,768-token context window tuned for executive job search reasoning</li>
+      <li>Designed a structured five-folder Google Drive output system with per-job packet generation and automatic operator sharing</li>
+    </ul>
+
+    <div class="subsection-title">Configuration &amp; Integration</div>
+    <ul class="acc-list">
+      <li>Configured OpenClaw 2026.3.13 multi-agent system with per-agent model assignments, tool deny lists, workspace paths, and agent directory structures</li>
+      <li>Integrated Discord as the primary communication channel — guild routing, channel allowlisting, bot identity, and message acknowledgment</li>
+      <li>Authenticated Google Workspace via OAuth 2.0 using gogcli v0.12 on a headless Linux server using manual callback flow</li>
+      <li>Configured file-based keyring and persisted GOG_KEYRING_PASSWORD to ~/.openclaw/.env for unattended gateway service execution</li>
+      <li>Scheduled daily Morning Report cron job at 8:00 AM ET using OpenClaw's built-in Gateway scheduler with isolated session execution and Discord delivery</li>
+    </ul>
+
+    <div class="subsection-title">Debugging &amp; Root Cause Analysis</div>
+    <ul class="acc-list">
+      <li>Identified a silent API adapter incompatibility between OpenClaw's ollama mode and Ollama's message role handling — a failure mode with no error output of any kind</li>
+      <li>Cross-referenced source code and a published Medium post documenting the identical issue to confirm root cause before touching any files</li>
+      <li>Applied targeted three-field fix to two separate config files with full backup protocol, post-edit verification, and gateway restart — zero data loss, first-attempt success</li>
+      <li>Maintained strict research-before-action protocol throughout: no guesses, no assumptions, help files and official documentation consulted before every command</li>
+    </ul>
+  </div>
+
+  <!-- 06 SKILLS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">Technical Competencies Demonstrated</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">AI / LLM Systems</div>
+        <ul class="skill-list">
+          <li>Local LLM deployment and management (Ollama)</li>
+          <li>Multi-agent system architecture and orchestration</li>
+          <li>System prompt design and context engineering</li>
+          <li>Agent role separation and tool policy design</li>
+          <li>Embedding-based memory systems</li>
+          <li>Model selection and parameter tuning</li>
+          <li>API adapter compatibility analysis</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Infrastructure &amp; Integration</div>
+        <ul class="skill-list">
+          <li>Linux server administration (Ubuntu 24.04)</li>
+          <li>systemd service configuration and management</li>
+          <li>JSON configuration management at scale</li>
+          <li>OAuth 2.0 headless authentication flows</li>
+          <li>Google Workspace API integration</li>
+          <li>Discord bot configuration and channel routing</li>
+          <li>Environment variable security and secret management</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Problem Solving</div>
+        <ul class="skill-list">
+          <li>Silent failure diagnosis without log output</li>
+          <li>Source code analysis for root cause identification</li>
+          <li>Cross-referencing documentation and community sources</li>
+          <li>Systematic backup-verify-restore protocols</li>
+          <li>Research-first, protocol-driven methodology</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">AI Tools &amp; Frameworks</div>
+        <ul class="skill-list">
+          <li>OpenClaw 2026 — multi-agent gateway framework</li>
+          <li>Ollama — local model serving and management</li>
+          <li>gogcli v0.12 — Google Workspace CLI automation</li>
+          <li>Qwen 3.5 model family (4b, 9b variants)</li>
+          <li>Gemini (Google) — design and build phases</li>
+          <li>Claude (Anthropic) — debugging and integration</li>
+          <li>Discord API — bot deployment and management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 STATUS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <span class="section-title">Operational Status</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-eye">Completed</div>
+        <div class="tl-title">Core System Fix — API Adapter Correction</div>
+        <div class="tl-body">Both config files updated and verified. Duca confirmed receiving full system prompt. Discord test confirmed complete mission awareness on first attempt.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-eye">Completed</div>
+        <div class="tl-title">Google Workspace Authentication</div>
+        <div class="tl-body">OAuth 2.0 headless flow completed for Duca.AJS@gmail.com. File-based keyring configured. All Google services authenticated and operational.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-eye">Completed</div>
+        <div class="tl-title">Google Drive — Source Documents &amp; Operator Access</div>
+        <div class="tl-body">Resume (PDF + DOCX), Cover Letter template, Contact Info, and Blacklist Log all confirmed visible to Duca. All 5 output folders and root shared with operator at editor level.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-eye">Completed</div>
+        <div class="tl-title">Morning Report Scheduling</div>
+        <div class="tl-body">Cron job active in OpenClaw Gateway scheduler: daily at 8:00 AM America/New_York. GOG_KEYRING_PASSWORD persisted for unattended execution.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-eye">Live</div>
+        <div class="tl-title">System Fully Operational</div>
+        <div class="tl-body">Gateway running, Discord connected, all six agents loaded, cron armed. First Morning Report fires tomorrow at 8:00 AM ET.</div>
+      </div>
+    </div>
+    <div class="status-row">
+      <div class="status-pill"><span class="dot"></span>Gateway Running</div>
+      <div class="status-pill"><span class="dot"></span>Discord Connected</div>
+      <div class="status-pill"><span class="dot"></span>Google Drive Authenticated</div>
+      <div class="status-pill"><span class="dot"></span>Cron Armed · 8:00 AM ET</div>
+      <div class="status-pill"><span class="dot"></span>Docker Sandbox Ready</div>
+      <div class="status-pill"><span class="dot"></span>All 6 Agents Loaded</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div><strong>AJ Sottile</strong> · AI Systems Design &amp; Autonomous Agent Architecture · Project Duca · Johnstown, PA</div>
+    <div class="footer-right">March 2026 · OpenClaw 2026.3.13 · Ollama · Ubuntu 24.04</div>
+  </footer>
+
+</div>
+</body>
+</html>
