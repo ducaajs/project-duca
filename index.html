@@ -14,7 +14,7 @@
     color: #c8cdd8;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
@@ -59,11 +59,44 @@
     font-size: 14px;
     font-weight: 400;
     color: #8a8fa0;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
+  }
+
+  /* KPI band */
+  .kpi-band {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .kpi-tile {
+    background: #131b2e;
+    border: 1px solid #1e2640;
+    border-radius: 4px;
+    padding: 16px 12px;
+    text-align: center;
+  }
+
+  .kpi-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #c5a44e;
+    line-height: 1.1;
+  }
+
+  .kpi-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a8fa0;
+    margin-top: 6px;
   }
 
   /* Section headers */
-  .section { margin-bottom: 28px; }
+  .section { margin-bottom: 36px; }
 
   .section-header {
     display: flex;
@@ -83,14 +116,15 @@
 
   .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 400;
     color: #e8ecf4;
   }
 
   /* Cards */
   .card {
-    background: #111827;
+    background: #131b2e;
+    border: 1px solid #1e2640;
     border-left: 3px solid #c5a44e;
     padding: 14px 20px;
     margin-bottom: 10px;
@@ -99,8 +133,8 @@
 
   .card-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 10px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #c5a44e;
     margin-bottom: 2px;
@@ -122,22 +156,70 @@
 
   /* Overview text */
   .overview-text {
-    background: #111827;
+    background: #131b2e;
+    border: 1px solid #1e2640;
     border-left: 3px solid #c5a44e;
     padding: 16px 22px;
     margin-bottom: 14px;
     border-radius: 0 4px 4px 0;
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 1.65;
     color: #c8cdd8;
   }
 
   .overview-text p { margin-bottom: 8px; }
   .overview-text p:last-child { margin-bottom: 0; }
+  .overview-text .lead { color: #e8ecf4; font-weight: 400; font-size: 15.5px; }
 
-  /* Pipeline diagram */
+  /* Pipeline flow diagram */
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+  }
+
+  .flow-node {
+    background: #131b2e;
+    border: 1px solid #1e2640;
+    border-radius: 4px;
+    padding: 12px 12px;
+    min-width: 118px;
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  .flow-node-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #e8ecf4;
+    margin-bottom: 3px;
+  }
+
+  .flow-node-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: #8a8fa0;
+    line-height: 1.5;
+  }
+
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    color: #c5a44e;
+    font-size: 14px;
+    padding: 0 6px;
+    flex: 0 0 auto;
+  }
+
+  /* Pipeline detail list */
   .pipeline-box {
-    background: #111827;
+    background: #131b2e;
+    border: 1px solid #1e2640;
     padding: 14px 20px;
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
@@ -164,15 +246,16 @@
   }
 
   .tech-cell {
-    background: #111827;
+    background: #131b2e;
+    border: 1px solid #1e2640;
     padding: 10px 14px;
     border-radius: 4px;
   }
 
   .tech-cell-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 10px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #c5a44e;
     margin-bottom: 2px;
@@ -184,9 +267,10 @@
     color: #e8ecf4;
   }
 
-  /* Debug section */
+  /* Debug / decision cards */
   .debug-card {
-    background: #111827;
+    background: #131b2e;
+    border: 1px solid #1e2640;
     border-left: 3px solid #c5a44e;
     padding: 14px 20px;
     margin-bottom: 10px;
@@ -195,8 +279,8 @@
 
   .debug-card .label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 10px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #c5a44e;
     margin-bottom: 6px;
@@ -222,13 +306,13 @@
     color: #c5a44e;
   }
 
-  /* Accomplishments */
+  /* Accomplishments / lists */
   .accomplishment-group { margin-bottom: 14px; }
 
   .accomplishment-group-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 10px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #c5a44e;
     margin-bottom: 8px;
@@ -252,70 +336,47 @@
     color: #c5a44e;
   }
 
-  /* Competencies grid */
-  .comp-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  .accomplishment-group a, .debug-card a {
+    color: #c5a44e;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(197,164,78,0.35);
+  }
+  .accomplishment-group a:hover, .debug-card a:hover { border-bottom-color: #c5a44e; }
+
+  /* Governance */
+  .govern-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+
+  .flow-caption { font-size: 12.5px; color: #8a8fa0; margin-bottom: 10px; }
+
+  .flow-boundary {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex: 1 1 auto;
+    border: 1px dashed rgba(197,164,78,0.5);
+    border-radius: 6px;
+    padding: 16px 8px 8px;
   }
 
-  .comp-col-label {
+  .boundary-tag {
+    position: absolute;
+    top: -7px;
+    left: 12px;
+    background: #0b1120;
+    padding: 0 8px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #c5a44e;
-    margin-bottom: 8px;
+    white-space: nowrap;
   }
 
-  .comp-col ul { list-style: none; padding: 0; }
-
-  .comp-col li {
-    font-size: 12px;
-    color: #9ca3b4;
-    padding: 2px 0 2px 14px;
-    position: relative;
-  }
-
-  .comp-col li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 5px;
-    height: 5px;
-    background: #c5a44e;
-    border-radius: 50%;
-    transform: translateY(-50%);
-  }
+  .flow-node.decide { border: 1px solid #c5a44e; background: #1a2236; flex: 0 0 auto; min-width: 130px; }
+  .flow-node.decide .flow-node-title { color: #c5a44e; }
 
   /* Status section */
-  .status-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: #111827;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 500;
-    color: #c8cdd8;
-  }
-
-  .badge-dot {
-    width: 7px;
-    height: 7px;
-    background: #22c55e;
-    border-radius: 50%;
-  }
-
   .status-line {
     font-size: 13px;
     color: #9ca3b4;
@@ -341,11 +402,13 @@
   @media (max-width: 700px) {
     .page { padding: 24px 16px 40px; }
     h1 { font-size: 36px; }
+    .kpi-band { grid-template-columns: 1fr 1fr 1fr; }
     .tech-grid { grid-template-columns: 1fr 1fr; }
-    .comp-grid { grid-template-columns: 1fr; }
+    .govern-grid { grid-template-columns: 1fr; }
     .header-bar { flex-direction: column; gap: 4px; }
     .header-meta { text-align: left; }
     .footer { flex-direction: column; gap: 6px; }
+    .flow-node { min-width: 108px; }
   }
 </style>
 </head>
@@ -354,16 +417,25 @@
 
   <!-- Header -->
   <div class="header-bar">
-    <span>AI Systems Portfolio &middot; April 2026</span>
+    <span>AI Systems Portfolio &middot; July 2026</span>
     <div class="header-meta">
       <strong style="color:#e8ecf4;">Project Duca</strong><br>
       DucaBrain &middot; Ubuntu 24.04<br>
-      OpenClaw 2026.4.2 &middot; Ollama<br>
+      OpenClaw 2026.5.28 &middot; Ollama<br>
       Johnstown, PA
     </div>
   </div>
   <h1>AJ Sottile</h1>
   <div class="subtitle">Autonomous Agent Architecture &amp; AI Systems Design</div>
+
+  <!-- KPI band -->
+  <div class="kpi-band">
+    <div class="kpi-tile"><div class="kpi-num">3</div><div class="kpi-label">Independent<br>Sources</div></div>
+    <div class="kpi-tile"><div class="kpi-num">3,000+</div><div class="kpi-label">Career Sites<br>Scanned Nightly</div></div>
+    <div class="kpi-tile"><div class="kpi-num">72&rarr;8</div><div class="kpi-label">Min Scoring<br>Run (Optimized)</div></div>
+    <div class="kpi-tile"><div class="kpi-num">1</div><div class="kpi-label">LLM Stage<br>Rest Python</div></div>
+    <div class="kpi-tile"><div class="kpi-num">$0</div><div class="kpi-label">Monthly<br>Cost</div></div>
+  </div>
 
   <!-- 01 Project Overview -->
   <div class="section">
@@ -372,58 +444,172 @@
       <span class="section-title">Project Overview</span>
     </div>
     <div class="overview-text">
-      <p>Project Duca is a fully autonomous, locally-hosted AI job search pipeline running on a purpose-built Ubuntu 24.04 workstation. It scrapes job boards, ingests forwarded email alerts, verifies and enriches leads, scores them against the operator's profile via local LLM, builds per-lead application packets, and delivers a structured Morning Report to Discord. All outputs are filed to Google Drive. Zero cloud dependency. Zero paid API usage.</p>
-      <p>The system was built around two principles: absolute data sovereignty and human-in-the-loop governance. Cloud-based job tools and auto-applier bots expose sensitive career data to third-party servers while triggering ATS blacklists that silently kill applications. Duca keeps all processing on the operator's machine. The pipeline finds the signal. The operator makes every decision. Nothing ships without human review.</p>
+      <p class="lead">Project Duca is a fully local, autonomous job-search pipeline engineered for fit over volume &mdash; it surfaces a small set of high-fit roles each night rather than maximizing lead count, and no candidate data ever leaves the machine.</p>
+      <p>It runs unattended on a dedicated Ubuntu 24.04 workstation, drawing leads from three independent sources &mdash; major public job aggregators, forwarded email alerts, and directly from employers' own applicant-tracking systems &mdash; then verifies and enriches each lead, scores it against a fixed candidate profile with a local LLM, and builds per-lead application packets. Data and packets are filed to cloud storage; a nightly status alert reports what ran, when it finished, and whether the scoring model ran on the GPU or fell back to the CPU. Zero cloud inference. Zero paid API usage.</p>
+      <p>Duca is built on two principles: all data stays on local hardware, and a human stays in control of every decision. Cloud job tools and auto-applier bots expose sensitive career data to third-party servers and can trip applicant-tracking blacklists that silently kill applications. Duca keeps all processing on the local machine. The pipeline finds the signal and flags the risks; it never applies on anyone's behalf &mdash; every application is a human decision, and nothing is submitted without human review.</p>
     </div>
 
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
       <div class="card">
         <div class="card-label">Deployment</div>
-        <div class="card-heading">100% Local</div>
-        <p>All inference on DucaBrain. No cloud. No third-party LLM services.</p>
+        <div class="card-heading">100% Local &middot; Single GPU</div>
+        <p>All inference on DucaBrain. No cloud model. No third-party LLM services.</p>
       </div>
       <div class="card">
-        <div class="card-label">Communication</div>
-        <div class="card-heading">Discord Bot</div>
-        <p>Private guild. All reporting flows through a dedicated channel.</p>
+        <div class="card-label">Delivery</div>
+        <div class="card-heading">Storage + Phone Alert</div>
+        <p>Data and packets to cloud storage; a nightly status alert to a phone, flagging GPU-vs-CPU health.</p>
       </div>
       <div class="card">
         <div class="card-label">Scheduling</div>
         <div class="card-heading">Nightly &middot; Midnight ET</div>
-        <p>OpenClaw cron. Self-managing. Persistent across reboots.</p>
+        <p>Cron-driven. Self-managing. Persistent across reboots.</p>
       </div>
     </div>
   </div>
 
-  <!-- 02 Pipeline -->
+  <!-- 02 Governance & Control -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">02</span>
-      <span class="section-title">Pipeline Architecture</span>
+      <span class="section-title">Governance &amp; Control</span>
     </div>
-    <div class="pipeline-box">
-      <span class="stage-label">STAGE 1 &nbsp;&nbsp;</span> <span class="desc">Scout (python-jobspy) &mdash; Web scrape from Indeed + LinkedIn</span><br>
-      <span class="stage-label">STAGE 1.3</span> <span class="desc">Email ingest (Gmail) &mdash; Parse forwarded alerts (6 sender-specific parsers)</span><br>
-      <span class="stage-label">STAGE 1.4</span> <span class="desc">Merge + cross-dedup &mdash; Combine sources, remove duplicates</span><br>
-      <span class="stage-label">STAGE 1.5</span> <span class="desc">Vault dedup (7-day window) &mdash; Suppress previously seen leads</span><br>
-      <span class="stage-label">STAGE 2 &nbsp;&nbsp;</span> <span class="desc">Gatekeeper verify &mdash; URL liveness, ATS tracing, salary lookup, ghost detection</span><br>
-      <span class="stage-label">STAGE 3 &nbsp;&nbsp;</span> <span class="desc">Analyst (Ollama LLM) &mdash; Score leads against operator profile</span><br>
-      <span class="stage-label">STAGE 4 &nbsp;&nbsp;</span> <span class="desc">Drive upload &mdash; Per-lead application packets + manual-check roster</span><br>
-      <span class="stage-label">STAGE 5 &nbsp;&nbsp;</span> <span class="desc">Vault write &mdash; SQLite logging for all scored leads</span>
+    <div class="overview-text">
+      <p>Privacy and control are design requirements, not add-ons. The system runs locally, shares nothing without approval, and never acts on its own. Duca's role is to <strong style="color:#e8ecf4;">protect the user</strong>: surface the right openings, flag the dangers, and leave every decision to a human.</p>
     </div>
-    <p class="pipeline-note">Only Stage 3 uses the LLM. Everything else is deterministic Python. Orchestrated by a 530-line bash script. Duca (the OpenClaw agent) fires the pipeline via cron, parses the output, formats the Morning Report, and delivers it to Discord.</p>
+    <div class="govern-grid">
+      <div class="card">
+        <div class="card-label">Privacy by Design</div>
+        <div class="card-heading">Data stays on the machine</div>
+        <p>All processing runs locally on dedicated hardware. Career history, targets, and documents never go to a third-party server, are never used to train a model, and carry no telemetry. The job searches themselves reach out &mdash; that's the work &mdash; but personal data does not.</p>
+      </div>
+      <div class="card">
+        <div class="card-label">Human in the Loop</div>
+        <div class="card-heading">It finds &amp; flags &mdash; a human decides</div>
+        <p>Duca never applies for anything. The filters flag the dangers &mdash; ghost jobs, scams, salary games &mdash; and present vetted openings with the risks surfaced. The user controls where data goes and what gets shared, and tracks every application's outcome.</p>
+      </div>
+    </div>
+    <div class="accomplishment-group">
+      <div class="accomplishment-group-label">What Duca deliberately does NOT do</div>
+      <ul>
+        <li>Auto-apply to anything &mdash; every application is a human decision, made by hand</li>
+        <li>Send career data to a third-party server, or use it to train a model</li>
+        <li>Run inference in the cloud &mdash; the model is 100% on-device</li>
+        <li>Emit telemetry or analytics, or depend on any paid API</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- 03 Technology Stack -->
+  <!-- 03 Pipeline -->
   <div class="section">
     <div class="section-header">
       <span class="section-num">03</span>
+      <span class="section-title">Pipeline Architecture</span>
+    </div>
+
+    <p class="flow-caption">Every stage below runs on local hardware. The pipeline finds and flags &mdash; it never applies. The final decision is human.</p>
+    <div class="flow">
+      <div class="flow-boundary">
+        <span class="boundary-tag">Local &middot; DucaBrain &mdash; data stays inside</span>
+        <div class="flow-node">
+          <div class="flow-node-title">Gather</div>
+          <div class="flow-node-sub">3 sources<br>jobspy &middot; email &middot; feeds</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-node">
+          <div class="flow-node-title">Merge</div>
+          <div class="flow-node-sub">cross-dedup<br>+ vault (7d)</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-node">
+          <div class="flow-node-title">Verify</div>
+          <div class="flow-node-sub">liveness &middot; salary<br>ghost detection</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-node">
+          <div class="flow-node-title">Filter</div>
+          <div class="flow-node-sub">metadata rules<br>+ priority tag</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-node">
+          <div class="flow-node-title">Score</div>
+          <div class="flow-node-sub">local LLM<br>Ollama</div>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-node">
+          <div class="flow-node-title">Deliver</div>
+          <div class="flow-node-sub">output<br>report + alert</div>
+        </div>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-node decide">
+        <div class="flow-node-title">Human Review</div>
+        <div class="flow-node-sub">review &middot; apply<br>no auto-apply</div>
+      </div>
+    </div>
+
+    <div class="pipeline-box">
+      <span class="stage-label">STAGE 1</span> <span class="desc">Scout (python-jobspy) &mdash; Web scrape from major public job aggregators</span><br>
+      <span class="stage-label">STAGE 2</span> <span class="desc">Email ingest &mdash; Parse forwarded alerts (6 sender-specific parsers)</span><br>
+      <span class="stage-label">STAGE 3</span> <span class="desc">Direct feeds &mdash; Employers' applicant-tracking systems via keyless public APIs</span><br>
+      <span class="stage-label">STAGE 4</span> <span class="desc">Merge + cross-dedup &mdash; Combine sources, remove duplicates</span><br>
+      <span class="stage-label">STAGE 5</span> <span class="desc">Vault dedup (7-day window) &mdash; Suppress previously seen leads</span><br>
+      <span class="stage-label">STAGE 6</span> <span class="desc">Gatekeeper verify &mdash; URL liveness, source tracing, salary lookup, ghost detection</span><br>
+      <span class="stage-label">STAGE 7</span> <span class="desc">Analyst (Ollama LLM) &mdash; Score leads against a fixed candidate profile</span><br>
+      <span class="stage-label">STAGE 8</span> <span class="desc">Delivery &mdash; Per-lead application packets to cloud storage</span><br>
+      <span class="stage-label">STAGE 9</span> <span class="desc">Vault write &mdash; SQLite logging for all scored leads</span>
+    </div>
+    <p class="pipeline-note">Only the scoring stage uses the LLM &mdash; everything else is deterministic Python, orchestrated by a ~930-line bash script. The agent fires the pipeline via cron, parses the output, formats the Morning Report &mdash; including a GPU-vs-CPU health line &mdash; and delivers it as a phone alert.</p>
+  </div>
+
+  <!-- 03 Key Decisions & Tradeoffs -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Key Decisions &amp; Tradeoffs</span>
+    </div>
+
+    <div class="debug-card">
+      <div class="label">Optimized for Fit, Not Volume</div>
+      <p><strong>Decision:</strong> Tune the whole pipeline for fewer, higher-fit leads in the target lane &mdash; never for daily lead count.</p>
+      <p><strong>Why:</strong> A single strong 85% match is worth more than ten 40% long shots &mdash; the ten cost roughly 10&times; the research-and-apply hours with little chance of return. The pipeline is tuned for signal: a lane-targeted source adds ~36 on-target leads a night (off-lane roles excluded at the source), and metadata filters strip ~15&ndash;21 off-target leads each night before review. <strong>Tradeoff:</strong> lower headline volume &mdash; by design. Better work, not more work.</p>
+    </div>
+
+    <div class="debug-card">
+      <div class="label">Deterministic Python + a Single LLM Stage</div>
+      <p><strong>Decision:</strong> Confine the model to the one task only it can do &mdash; nuanced fit-scoring &mdash; and make every gathering, verification, and filtering stage plain, testable Python.</p>
+      <p><strong>Why:</strong> An LLM is slow, nondeterministic, and priced per token; using it everywhere would make the pipeline unpredictable and costly. Keeping it to one stage means the run is reproducible, debuggable, and free to operate. <strong>Tradeoff:</strong> no free-form agent autonomy &mdash; a deliberate choice in favor of reliability.</p>
+    </div>
+
+    <div class="debug-card">
+      <div class="label">Local Model Over Cloud APIs</div>
+      <p><strong>Decision:</strong> Run all inference on a local GPU rather than a hosted LLM API.</p>
+      <p><strong>Why:</strong> No rate limits or vendor lock-in, and &mdash; the point of the project &mdash; sensitive career data never leaves the machine. <strong>Tradeoff:</strong> capped by a single GPU's model size; mitigated with tight prompts and batching so the smaller model still scores accurately.</p>
+    </div>
+
+    <div class="debug-card">
+      <div class="label">Cron Over a Long-Running Daemon</div>
+      <p><strong>Decision:</strong> Schedule a nightly one-shot run with a file lock instead of a persistent service.</p>
+      <p><strong>Why:</strong> Nothing to babysit &mdash; a scheduled process can't leak memory or wedge overnight, and a lock prevents overlapping runs and retry storms. <strong>Tradeoff:</strong> no real-time reaction, which a once-a-night job doesn't need.</p>
+    </div>
+
+    <div class="debug-card">
+      <div class="label">Storage + Messaging Over a Custom Dashboard</div>
+      <p><strong>Decision:</strong> Deliver results to cloud storage and a phone alert rather than building a web UI.</p>
+      <p><strong>Why:</strong> Zero infrastructure to host or secure, the status reaches a phone where the decision gets made, and the data lands where the human review step already works. <strong>Tradeoff:</strong> less rich than a dashboard &mdash; but review happens off-box by design.</p>
+    </div>
+  </div>
+
+  <!-- 04 Technology Stack -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
       <span class="section-title">Technology Stack</span>
     </div>
     <div class="tech-grid">
       <div class="tech-cell">
         <div class="tech-cell-label">Agent Framework</div>
-        <div class="tech-cell-value">OpenClaw 2026.4.2</div>
+        <div class="tech-cell-value">OpenClaw 2026.5.28</div>
       </div>
       <div class="tech-cell">
         <div class="tech-cell-label">Local Inference</div>
@@ -438,16 +624,28 @@
         <div class="tech-cell-value">python-jobspy</div>
       </div>
       <div class="tech-cell">
+        <div class="tech-cell-label">Direct Sourcing</div>
+        <div class="tech-cell-value">Keyless ATS APIs</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Board Discovery</div>
+        <div class="tech-cell-value">Common Crawl index</div>
+      </div>
+      <div class="tech-cell">
+        <div class="tech-cell-label">Source Registry</div>
+        <div class="tech-cell-value">3,064 validated boards</div>
+      </div>
+      <div class="tech-cell">
         <div class="tech-cell-label">Enrichment</div>
         <div class="tech-cell-value">SearXNG (localhost)</div>
       </div>
       <div class="tech-cell">
-        <div class="tech-cell-label">Communication</div>
-        <div class="tech-cell-value">Discord Bot API</div>
+        <div class="tech-cell-label">Alerting</div>
+        <div class="tech-cell-value">Push-to-mobile</div>
       </div>
       <div class="tech-cell">
         <div class="tech-cell-label">Output Storage</div>
-        <div class="tech-cell-value">Google Drive (gog CLI)</div>
+        <div class="tech-cell-value">Synced cloud store</div>
       </div>
       <div class="tech-cell">
         <div class="tech-cell-label">Deduplication</div>
@@ -460,10 +658,10 @@
     </div>
   </div>
 
-  <!-- 04 Critical Debugging -->
+  <!-- 05 Critical Debugging -->
   <div class="section">
     <div class="section-header">
-      <span class="section-num">04</span>
+      <span class="section-num">06</span>
       <span class="section-title">Critical Debugging</span>
     </div>
 
@@ -476,37 +674,45 @@
     <div class="debug-card">
       <div class="label">Community-Contributed Fixes &mdash; OpenClaw Issues #46298 &amp; #49572</div>
       <p><strong>Problem:</strong> <code>sessions_spawn</code> and <code>sessions_yield</code> fail silently in OpenClaw 2026.3.13. No posted fix existed. Cross-agent messaging required two undocumented configuration gates with no mention in official documentation.</p>
-      <p><strong>Fix:</strong> Built a working replacement using <code>sessions_send</code> with a blocking wait pattern. Published the first documented solutions to both open issues. Documented the undiscovered configuration requirements.</p>
+      <p><strong>Fix:</strong> Built a working replacement using <code>sessions_send</code> with a blocking wait pattern. Published the first <a href="https://github.com/ducaajs/project-duca/blob/main/TECHNICAL_WRITEUP.md">documented solutions</a> to both open issues, along with the undiscovered configuration requirements.</p>
     </div>
 
     <div class="debug-card">
-      <div class="label">Production Hardening &mdash; 24 Bugs Fixed in 4 Nights</div>
-      <p>LLM scoring runtime reduced from 72 minutes to 8&ndash;15 minutes via direct API calls, adaptive batching, and split-retry with recursive halving. Context overflow (97KB merged JSON exceeding 32K budget) resolved by restructuring pipeline stdout. Cross-company contamination in SearXNG enrichment fixed with strong-token relevance filtering.</p>
+      <div class="label">Production Hardening &mdash; Scoring Cut from 72 to 8&ndash;15 Minutes</div>
+      <p>LLM scoring runtime reduced from <strong>72 minutes to 8&ndash;15 minutes</strong> via direct API calls, adaptive batching, and split-retry with recursive halving. Context overflow (97KB merged JSON exceeding the 32K budget) resolved by restructuring pipeline stdout. Cross-company contamination in search enrichment fixed with strong-token relevance filtering.</p>
+    </div>
+
+    <div class="debug-card">
+      <div class="label">Recall-Preserving Source Filter &mdash; Direct Sourcing</div>
+      <p><strong>Problem:</strong> An early draft of the direct-sourcing filter discarded postings older than a set age as likely &ldquo;ghost jobs.&rdquo; External research on hiring patterns showed that senior and director-level roles routinely stay open for months &mdash; the exact roles the system is built to surface. The speed-oriented filter would have silently dropped its highest-value targets.</p>
+      <p><strong>Fix:</strong> Replaced age-based dropping with a <strong>surface-not-drop</strong> model &mdash; nothing is auto-discarded on posting age; borderline leads are surfaced with reasons for review. Recall is favored over precision, with the review step refining the final set. Caught before deployment through research-first review, not a production incident.</p>
     </div>
   </div>
 
-  <!-- 05 Key Accomplishments -->
+  <!-- 06 Key Accomplishments -->
   <div class="section">
     <div class="section-header">
-      <span class="section-num">05</span>
-      <span class="section-title">Key Accomplishments</span>
+      <span class="section-num">07</span>
+      <span class="section-title">Engineering Highlights</span>
     </div>
 
     <div class="accomplishment-group">
       <div class="accomplishment-group-label">System Design &amp; Architecture</div>
       <ul>
-        <li>Purpose-built AI workstation (DucaBrain) configured exclusively for autonomous agentic workloads</li>
-        <li>Multi-stage pipeline with deterministic Python stages and a single LLM scoring stage for zero-cost operation</li>
-        <li>6 sender-specific email parsers: LinkedIn, Indeed, Ladders (3 formats), Lensa, Virtual Vocations, MyPerfectResume</li>
-        <li>Structured Google Drive output with per-lead packet generation and automatic operator sharing</li>
+        <li>A dedicated Ubuntu workstation (DucaBrain) built to run the pipeline and local model unattended</li>
+        <li>Multi-stage pipeline with deterministic Python stages and a single LLM scoring stage</li>
+        <li>Three independent lead sources &mdash; aggregator scraping, parsed email alerts, and direct-from-employer feeds &mdash; normalized into one lead shape and cross-deduplicated</li>
+        <li>Direct-from-employer sourcing via keyless applicant-tracking-system APIs, backed by a validated registry of 3,000+ company boards seeded from a public web-index crawl</li>
+        <li>6 sender-specific email parsers across major job-alert providers, including multi-format handling for a single sender</li>
+        <li>Structured cloud-storage output with per-lead packet generation, shared automatically</li>
       </ul>
     </div>
 
     <div class="accomplishment-group">
       <div class="accomplishment-group-label">Configuration &amp; Integration</div>
       <ul>
-        <li>OAuth 2.0 Google Workspace authentication on a headless Linux server using manual callback flow</li>
-        <li>Discord bot integration with guild routing, channel allowlisting, and message acknowledgment</li>
+        <li>OAuth 2.0 headless authentication against a major cloud provider using a manual callback flow</li>
+        <li>Messaging integration with channel routing, allowlisting, and delivery acknowledgment</li>
         <li>OpenClaw multi-agent configuration with model assignments, tool deny lists, and isolated workspaces</li>
       </ul>
     </div>
@@ -515,80 +721,40 @@
       <div class="accomplishment-group-label">Open-Source Contributions</div>
       <ul>
         <li>Posted first documented solutions to two open OpenClaw GitHub issues with no known public fix</li>
-        <li>Published full technical writeup with root cause analysis and working replacement patterns</li>
+        <li>Published a <a href="https://github.com/ducaajs/project-duca/blob/main/TECHNICAL_WRITEUP.md">full technical writeup</a> with root cause analysis and working replacement patterns</li>
       </ul>
     </div>
   </div>
 
-  <!-- 06 Technical Competencies -->
+  <!-- 07 Limitations & Roadmap -->
   <div class="section">
     <div class="section-header">
-      <span class="section-num">06</span>
-      <span class="section-title">Technical Competencies Demonstrated</span>
+      <span class="section-num">08</span>
+      <span class="section-title">Limitations &amp; Roadmap</span>
     </div>
-    <div class="comp-grid">
-      <div class="comp-col">
-        <div class="comp-col-label">AI / LLM Systems</div>
-        <ul>
-          <li>Local LLM deployment and management (Ollama)</li>
-          <li>Multi-stage pipeline architecture</li>
-          <li>System prompt design and context engineering</li>
-          <li>Model selection and parameter tuning</li>
-          <li>API adapter compatibility analysis</li>
-        </ul>
-      </div>
-      <div class="comp-col">
-        <div class="comp-col-label">Infrastructure &amp; Integration</div>
-        <ul>
-          <li>Linux server administration (Ubuntu 24.04)</li>
-          <li>OAuth 2.0 headless authentication</li>
-          <li>Google Workspace API integration</li>
-          <li>Discord bot deployment</li>
-          <li>Environment variable security</li>
-        </ul>
-      </div>
-      <div class="comp-col">
-        <div class="comp-col-label">Problem Solving</div>
-        <ul>
-          <li>Silent failure diagnosis without log output</li>
-          <li>Source code analysis for root cause identification</li>
-          <li>Systematic backup-verify-restore protocols</li>
-          <li>Research-first, protocol-driven methodology</li>
-        </ul>
-      </div>
-      <div class="comp-col">
-        <div class="comp-col-label">Tools &amp; Frameworks</div>
-        <ul>
-          <li>OpenClaw 2026 &mdash; agent gateway</li>
-          <li>Ollama &mdash; local model serving</li>
-          <li>gog CLI &mdash; Google Workspace automation</li>
-          <li>python-jobspy &mdash; job board scraping</li>
-          <li>SearXNG &mdash; search and enrichment</li>
-        </ul>
-      </div>
+    <div class="accomplishment-group">
+      <ul>
+        <li><strong style="color:#e8ecf4;">Recall over precision, by design.</strong> Some noise reaches the human review step &mdash; a deliberate tradeoff to avoid discarding real openings, not a defect.</li>
+        <li><strong style="color:#e8ecf4;">Single-GPU model ceiling.</strong> Scoring nuance is bounded by what fits on one video card; tight prompting and batching close most of the gap to a larger model.</li>
+        <li><strong style="color:#e8ecf4;">Coverage tracks the registry.</strong> Direct-feed reach is only as broad as the validated board registry; long-tail discovery is a periodic step, not exhaustive.</li>
+        <li><strong style="color:#e8ecf4;">Next:</strong> a held-out, hand-labeled set to measure scoring precision/recall; per-run analytics in the Morning Report; and broader regression coverage around the parsers.</li>
+      </ul>
     </div>
   </div>
 
-  <!-- 07 Operational Status -->
+  <!-- 08 Operational Status -->
   <div class="section" style="margin-bottom:0;">
     <div class="section-header">
-      <span class="section-num">07</span>
+      <span class="section-num">09</span>
       <span class="section-title">Operational Status</span>
     </div>
-    <p class="status-line">Operational since March 2026. Rebuilt and hardened April 2026. 675+ leads processed. 24 bugs fixed. Morning Report delivered nightly.</p>
-    <div class="status-badges">
-      <span class="badge"><span class="badge-dot"></span>Gateway Running</span>
-      <span class="badge"><span class="badge-dot"></span>Discord Connected</span>
-      <span class="badge"><span class="badge-dot"></span>Drive Authenticated</span>
-      <span class="badge"><span class="badge-dot"></span>Cron Armed</span>
-      <span class="badge"><span class="badge-dot"></span>Pipeline Operational</span>
-    </div>
+    <p class="status-line">Operational since March 2026, rebuilt and hardened through the spring. Direct-from-employer feeds added July 2026. 675+ leads triaged to date; the Morning Report is delivered every night.</p>
   </div>
 
   <!-- Footer -->
   <div class="footer">
     <span>AJ Sottile &middot; Project Duca &middot; Johnstown, PA</span>
-    <span>April 2026 &middot; <a href="https://github.com/ducaajs/project-duca">GitHub</a> &middot; <a href="https://linkedin.com/in/aj-sottile">LinkedIn</a></span>
+    <span>July 2026 &middot; <a href="https://github.com/ducaajs/project-duca">GitHub</a> &middot; <a href="https://github.com/ducaajs/project-duca/blob/main/TECHNICAL_WRITEUP.md">Writeup</a> &middot; <a href="https://linkedin.com/in/aj-sottile">LinkedIn</a></span>
   </div>
 
 </div>
