@@ -1,11 +1,13 @@
-# Project Duca: Autonomous Multi-Agent Executive Job Search Pipeline
+# Project Duca: Making Multi-Agent Orchestration Work in OpenClaw 2026.3.13
 ### A Working Solution to OpenClaw sessions_yield and sessions_spawn Bugs on Consumer Hardware
+
+> **Updated October 2026:** This writeup documents the March 2026 multi-agent build and the fixes that made it run. Duca has since been rebuilt for reliability around deterministic stages and a single LLM scoring stage, with a human making every decision. The current system is described at [ducaajs.github.io/project-duca](https://ducaajs.github.io/project-duca/).
 
 ---
 
 ## Overview
 
-Project Duca is a fully autonomous, zero-cost, locally-hosted AI executive job search pipeline built on OpenClaw 2026.3.13, Ollama 0.18.2, and a Qwen3.5 Q4_K_M model running on an NVIDIA RTX 3060 12GB. The pipeline runs on a scheduled cron job, searches 150+ job postings nightly across major free job boards, filters them against hard parameters, scores matches, drafts tailored cover letters, audits output quality, and delivers a structured morning report to Discord — all without any cloud dependency or paid API usage.
+Project Duca is an automated, zero-cost, locally-hosted AI executive job search pipeline built on OpenClaw 2026.3.13, Ollama 0.18.2, and a Qwen3.5 Q4_K_M model running on an NVIDIA RTX 3060 12GB. The pipeline runs on a scheduled cron job, searches 150+ job postings nightly across major free job boards, filters them against hard parameters, scores matches, drafts tailored cover letters, audits output quality, and delivers a structured morning report to Discord — all without cloud inference or paid API usage.
 
 This document describes the technical problems encountered, how they were diagnosed, and the working solutions implemented — including a confirmed workaround for OpenClaw GitHub issues **#46298** and **#49572** that allows multi-agent pipeline orchestration to function correctly in 2026.3.13.
 
